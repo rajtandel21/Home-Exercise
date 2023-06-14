@@ -1,0 +1,20 @@
+<div *ngIf="person" id="formContainer">
+  <h2>Update table</h2>
+  <div>
+    Name: <input type="text" [(ngModel)]="person.name" placeholder="Name" />
+  </div>
+  <div>
+    Email: <input type="email" [(ngModel)]="person.email" placeholder="Email" />
+  </div>
+  <div>
+    Date of Birth: <input type="datetime" [(ngModel)]="person.dateOfBirth" placeholder="Date of Birth" />
+  </div>
+  <div>
+    Phone Number: <input type="text" [(ngModel)]="person.phoneNumber" placeholder="Phone Number" />
+  </div>
+  <div>
+    Address: <input type="text" [(ngModel)]="person.address" placeholder="Address" />
+  </div>
+  <button (click)="addPerson(person)" *ngIf="!person.id">Create</button>
+  <button (click)="editPerson(person)" *ngIf="person.id">Save</button>
+</div>

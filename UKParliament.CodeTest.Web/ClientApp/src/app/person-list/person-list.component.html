@@ -1,0 +1,39 @@
+<div class="welcome">
+  <h1 class="message">Person app</h1>
+</div>
+
+<div id="mainContainer">
+  <div id="listContainer">
+    <h2>List</h2>
+
+    <button (click)="createPerson()">Add new person</button>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Date of Birth</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of personList">
+          <td>{{ person.name }}</td>
+          <td>{{ person.email }}</td>
+          <td>{{ person.dateOfBirth }}</td>
+          <td>{{ person.phoneNumber }}</td>
+          <td>{{ person.address }}</td>
+          <td><button (click)="editPerson(person)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <app-edit-person [person]="personToEdit" (newPersonEvent)="updatePersonList($event)"></app-edit-person>
+</div>
+
+
